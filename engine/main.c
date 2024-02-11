@@ -20,13 +20,13 @@ int initEngine() {
     pthread_t renderer;
 
     if (pthread_create(&renderer, NULL, render_thread,(void*)&objectsI[0]) != 0) {
-        perror("pthread_create");
+        printf("pthread_create");
         return 1;
     }
 
     // Wait for the thread to finish
     if (pthread_join(renderer, NULL) != 0) {
-        perror("pthread_join");
+        printf("pthread_join");
         return 1;
     }
     

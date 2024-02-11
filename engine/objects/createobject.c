@@ -40,7 +40,7 @@ struct ObjectI createObjectILong(int64_t x, int64_t y, int64_t z, enum ObjectTyp
 };
 
 
-struct ObjectF createObjectF(double x, double y, double z, enum ObjectType type, struct ObjectI *parent) {
+struct ObjectF createObjectF(double x, double y, double z, enum ObjectType type, struct ObjectF* parent) {
     struct ObjectF output;
     output.x = x;
     output.y = y;
@@ -53,7 +53,7 @@ struct ObjectF createObjectF(double x, double y, double z, enum ObjectType type,
     return output;
 };
 
-struct ObjectF createObjectFShort(enum ObjectType type, struct ObjectI* parent) {
+struct ObjectF createObjectFShort(enum ObjectType type, struct ObjectF* parent) {
     struct ObjectF output;
     output.x = 0;
     output.y = 0;
@@ -66,7 +66,7 @@ struct ObjectF createObjectFShort(enum ObjectType type, struct ObjectI* parent) 
     return output;
 };
 
-struct ObjectF createObjectFLong(double x, double y, double z, enum ObjectType type, struct ObjectI* parent, char* attrs) {
+struct ObjectF createObjectFLong(double x, double y, double z, enum ObjectType type, struct ObjectF* parent, char* attrs) {
     struct ObjectF output;
     output.x = x;
     output.y = y;

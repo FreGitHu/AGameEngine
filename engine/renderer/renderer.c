@@ -1,4 +1,5 @@
-#include<renderer.h>
+#include"renderer.h"
+#include <stdio.h>
 
 struct ObjectI* workspace;
 
@@ -6,7 +7,7 @@ static void renderTreeI(struct ObjectI tree) {
     switch (tree.type)
     {
     case Script:
-        perror("AGE001: Scripts can not be placed in the workspace.");
+        printf("AGE001: Scripts can not be placed in the workspace.");
         exit(1);
         break;
 
