@@ -40,7 +40,7 @@ struct ObjectI createObjectILong(int64_t x, int64_t y, int64_t z, enum ObjectTyp
 };
 
 
-struct ObjectF createObjectF(double x, double y, double z, enum ObjectType type, struct ObjectI* parent) {
+struct ObjectF createObjectF(double x, double y, double z, enum ObjectType type, struct ObjectI *parent) {
     struct ObjectF output;
     output.x = x;
     output.y = y;

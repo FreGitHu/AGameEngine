@@ -2,22 +2,18 @@
 #include <stdio.h>
 #include "pthread.h"
 #include "renderer/renderer.h"
+#include "objects/objects.h"
 
 struct ObjectI objectsI[2];
 struct ObjectF objectsF[2];
 
 
 int initEngine() {
-    struct ObjectI workspace;
-    struct ObjectI cube;
-    workspace.type = Container;
-    workspace.parent = NULL;
-    cube.type = PartCube;
+    struct ObjectI workspace = createObjectIShort(Container, NULL);
+    struct ObjectI cube = createObjectI(0, 0, 0, PartCube, &workspace);
 
     workspace.numchildren++;
     workspace.children[workspace.numchildren-1] = cube;
-    cube.parent = &workspace;
-    cube.numchildren = 0;
 
     objectsI[0] = workspace;
 
