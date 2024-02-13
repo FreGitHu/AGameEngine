@@ -3,7 +3,7 @@
 
 struct ObjectI* workspace;
 
-static void renderTreeI(struct ObjectI tree) {
+void renderTreeI(struct ObjectI tree) {
     switch (tree.type)
     {
     case Script:
@@ -70,7 +70,7 @@ static void renderTreeI(struct ObjectI tree) {
     
 }
 
-static void display() {
+void display() {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glLoadIdentity();
     
@@ -80,7 +80,7 @@ static void display() {
 }
 
 
-static void render_thread(void* tree) {
+void render_thread(void* tree) {
     workspace = (struct ObjectI*)tree;
     glutInit(0, NULL);
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);

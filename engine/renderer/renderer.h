@@ -4,6 +4,6 @@
 #include <GL/glu.h>
 #include <GL/glut.h>
 
-static void renderTreeI(struct ObjectI tree);
-static void display();
-static void render_thread();
+void renderTreeI(struct ObjectI tree);
+void display();
+void render_thread();
