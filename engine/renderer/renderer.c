@@ -63,6 +63,10 @@ void renderTreeI(struct ObjectI tree) {
     default:
         break;
     }
+    if (tree.numchildren == 0)
+    {
+        return;
+    };
     for (size_t i = 0; i < tree.numchildren; i++)
     {
         renderTreeI(tree.children[1]);
