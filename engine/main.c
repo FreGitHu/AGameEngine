@@ -4,18 +4,16 @@
 #include "renderer/renderer.h"
 #include "objects/objects.h"
 
-struct ObjectI objectsI[2];
-struct ObjectF objectsF[2];
+struct ObjectI objectsI[2] = {{0, 0, 0, 0, Container, "workspace", NULL, 0, NULL}, {0, 0, 0, 0, Container, "gameStorage", NULL, 0, NULL}};
+struct ObjectF objectsF = {0.0, 0.0, 0.0, 0, Container, "workspace", NULL, 0, NULL};
 
 
 int initEngine() {
-    struct ObjectI workspace = createObjectIShort(Container, NULL);
-    struct ObjectI cube = createObjectI(0, 0, 0, PartCube, &workspace);
+    struct ObjectI cube = createObjectI(0, 0, 0, PartCube, &objectsI[1]);
 
-    workspace.numchildren++;
-    workspace.children[workspace.numchildren-1] = cube;
+    objectsI[1].numchildren++;
+    objectsI[1].children[objectsI[1].numchildren-1] = cube;
 
-    objectsI[0] = workspace;
 
     pthread_t renderer;
 
